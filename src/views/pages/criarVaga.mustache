@@ -38,14 +38,14 @@
         <div class="geral">
             <div class="container1">
                 <div class="texto">Crie sua Vaga</div>
-                <form action="../vaga-finalizada">
+                <form action="../criarVaga" method="post">
                     <div class="data">
                         <label>Titulo da vaga</label>
-                        <input type="text" placeholder="Titulo" required>
+                        <input type="text" name="Vaga" placeholder="Titulo" required>
                     </div>
                     <div class="data">
                         <label>Categoria da vaga</label>
-                        <select id="class" required>
+                        <select id="class" name="categoria" required>
                             <option>...</option>
                             <option value="">Desing</option>
                             <option value="">Front-end</option>
@@ -54,15 +54,15 @@
                     </div>
                     <div class="data">
                         <label>Dias da semana</label>
-                        <input type="text" placeholder="Ex: segunda a sexta" required>
+                        <input type="text" name="Periodo" placeholder="Ex: segunda a sexta" required>
                     </div>
                     <div class="data">
                         <label>Horas de Voluntariado</label>
-                        <input type="text" placeholder="Ex: 4 Horas" required>
+                        <input type="text" name="Horario" placeholder="Ex: 4 Horas" required>
                     </div>
                     <div class="data">
                         <label>Descrição da Vaga</label>
-                        <textarea name="" id="" cols="10" rows="5" placeholder="Sobre Sua Ong" required></textarea>
+                        <textarea name="Descricao" id="" cols="10" rows="5" placeholder="Sobre Sua Ong" required></textarea>
                     </div>
                     <div class="btn">
                         <button type="submit" id="enviar">Enviar</button>
@@ -70,8 +70,8 @@
                 </form>
             </div>
             <div class="desc">
-                <p class="cima">Oque ira acontecer depois ?</p>
-                <p>Ao criar sua vaga ela ira ficar disponivel em nosso site, para os Voluntarios possam se candidatar</p>
+                <p class="cima">O que ira acontecer depois?</p>
+                <p>Ao criar sua vaga ela ira ficar disponivel em nosso site, para os Voluntarios possam se candidatar!</p>
             </div>
         </div>
     </div>

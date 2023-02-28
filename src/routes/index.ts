@@ -6,6 +6,7 @@ import * as userController from '../controllers/userController'
 import * as ongController from '../controllers/ongController'
 import * as authController from '../controllers/authController'
 import * as contatoController from '../controllers/contatoController'
+import * as vagaController from '../controllers/vagaController'
 
 const router = Router()
 
@@ -14,8 +15,6 @@ router.get('/',homeController.home)
 router.get('/perfil',homeController.perfil)
 
 router.get('/sobre',homeController.sobre)
-
-router.get('/vagas',homeController.vagas)
 
 router.get('/loja',homeController.loja)
 
@@ -38,14 +37,16 @@ router.get('/criar-conta-ong',ongController.contaOng)
 router.get('/criar-vaga',ongController.criarVaga)
 
 router.get('/login',authController.login)
-// router.get('/login',ongController.login)
 
 router.get('/contaUsuario',authController.contaUsuario)
+
+router.get('/criarVaga',vagaController.Vaga)
+
 
 //criação do post 
 router.post('/contaUsuario',authController.contaUsuarioPost)
 router.post('/contaOng',ongController.contaOngPost)
 router.post('/contato',contatoController.contatoPost)
-
+router.post('/criarVaga',vagaController.cadVagaPost)
 
 export default router

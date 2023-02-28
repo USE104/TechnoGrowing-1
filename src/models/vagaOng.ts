@@ -1,5 +1,5 @@
 import { Model,DataTypes } from "sequelize"
-
+import { StringifyOptions } from "querystring";
 import {sequelize} from '../instances/mysql'
 
 
@@ -14,7 +14,7 @@ export interface vagaOngInstance extends Model{
     Endereco: String
 }
 
-export const VagasONG = sequelize.define<vagaOngInstance>("Vagas,",{
+export const VagasONG = sequelize.define<vagaOngInstance>("VagasONG,",{
     codVaga: {
         type:DataTypes.INTEGER,
         primaryKey:true,
@@ -50,6 +50,6 @@ export const VagasONG = sequelize.define<vagaOngInstance>("Vagas,",{
     }
 },
 {
-    tableName: "tbvoluntario",
+    tableName: "tbVagaONG",
     timestamps:false
 })

@@ -60,8 +60,7 @@ export const Ong = sequelize.define<OngInstance>("Ong,",{
         allowNull:false
     },
     Complemento:{
-        type:DataTypes.STRING,
-        allowNull:false
+        type:DataTypes.STRING
     },
     CEP:{
         type:DataTypes.STRING,

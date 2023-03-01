@@ -34,12 +34,36 @@
             </div>
         </header>
         <!--header aqui-->
-        <!--Conteudo da pagina-->
+        <!--Conteudo da pagina
+        
+                        <label for="">Nome da sua ONG</label>
+                        <select id="class" name="Nome" required>
+                        {{#tbvagaong}}
+                            <option>...</option>
+                            <option value="Desing">Desing</option>
+                            <option value="Front-end">Front-end</option>
+                            <option value="Back-end">Back-end</option>
+                            <option value="MYSQL">MYSQL</option>
+                            {{/tbvagaong}}
+                        </select>
+        
+        -->
         <div class="geral">
             <div class="container1">
                 <div class="texto">Crie sua Vaga</div>
                 <form action="../criarVaga" method="post">
                     <div class="data">
+                    
+                    <!--<label>Nome da ONG</label>
+                    <input type="text" name="Nome" placeholder="Coloque o nome da sua ONG aqui!" required>-->
+                         <label for="">Nome da sua ONG</label>
+                        <select id="class" name="Nome" required>
+                        {{#tbong}}
+                            <option>...</option>
+                            <option value="{{Nome}}">{{Nome}}</option>
+                        {{/tbong}}
+                        </select>
+
                         <label>Quantidade de Vaga</label>
                         <input type="text" name="Vaga" placeholder="Titulo" required>
                     </div>
@@ -59,7 +83,7 @@
                     </div>
                     <div class="data">
                         <label>Horas de Voluntariado</label>
-                        <input type="text" name="Horario" placeholder="Ex: 4 Horas" required>
+                        <input type="time" name="Horario" required>
                     </div>
                     <div class="data">
                         <label>Descrição da Vaga</label>

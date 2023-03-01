@@ -14,8 +14,11 @@ export const home = async (req:Request, res:Response) => {
     } catch(error){
         console.log("Deu problema: ",error)
     }
-    
-    res.render('pages/home')
+
+    let tbvagaong = await VagasONG.findAll()
+    res.render('pages/home',{
+        tbvagaong
+    })
 }
 
 export const perfil = (req:Request, res:Response) =>{

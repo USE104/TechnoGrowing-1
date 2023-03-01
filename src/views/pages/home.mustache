@@ -124,6 +124,29 @@
                     <a href="../vagas" class="saiba">Saiba mais</a>
                 </div>
         </section>
+
+                {{#tbvagaong}}
+                <div class="card">
+                    <div class="card-body">
+                    <img src="../images/combate.png" class="card-media">
+                    <h3>ONG: {{Nome}}</h3>
+                    <h5 class="cardTitle">Quantidade de vaga(s): {{Vaga}} <p class="categoria">Categoria: {{Categoria}}</p></h5>
+                    <p class="card-text">{{Descricao}}</p>
+                    <div class="descVaga2">
+                        <label class="lbldesc2">Horários e dia(s) de voluntáriado</label>
+                        <ul>
+                            <li><img src="../images/calendario.png"><p>{{Periodo}}</p></li>
+                            <li><img src="../images/relogio-nove.png"><p>{{Horario}}</p></li>
+                        </ul>
+                    </div>
+                    <a href="../404" class="saiba">Saiba mais</a>
+                        <div class="btn">
+                            <button type="submit" id="entrar"><a href="../vaga">Ver mais</a></button>
+                        </div>
+                    </div>
+                </div>
+                {{/tbvagaong}}
+
         <!--Conteudo da pagina-->
         <!--footer aqui-->
         <div class="loja">

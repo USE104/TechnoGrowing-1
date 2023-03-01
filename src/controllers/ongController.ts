@@ -96,7 +96,7 @@ export const contaOngPost = async (req:Request, res:Response) =>{
         //para garantir que meu usuário seja salvo
         //antes de redirecioná-lo para /
         req.session.save(() =>{
-            res.redirect('/ciarVaga')
+            res.redirect('/criarVaga')
         })
 
 

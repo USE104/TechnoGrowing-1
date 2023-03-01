@@ -5,13 +5,11 @@ import {sequelize} from '../instances/mysql'
 
 export interface vagaOngInstance extends Model{
     codVaga: number,
-    NomeONG: string,
     Vaga: string,
     Categoria: string,
     Descricao: string,
     Periodo: string,
-    horario: number,
-    Endereco: String
+    Horario: String
 }
 
 export const VagasONG = sequelize.define<vagaOngInstance>("VagasONG,",{
@@ -20,14 +18,10 @@ export const VagasONG = sequelize.define<vagaOngInstance>("VagasONG,",{
         primaryKey:true,
         autoIncrement:true
     },
-    NomeONG:{
-        type: DataTypes.STRING,
-        allowNull:false
-    }, 
     Vaga:{     
         type: DataTypes.STRING,
         allowNull:false
-    }, 
+    },    
     Categoria:{     
         type: DataTypes.STRING,
         allowNull:false
@@ -41,15 +35,11 @@ export const VagasONG = sequelize.define<vagaOngInstance>("VagasONG,",{
         allowNull:false
     },
     Horario:{
-        type: DataTypes.NUMBER,
-        allowNull:false
-    },
-    Endereco:{
         type: DataTypes.STRING,
         allowNull:false
-    }
+    },
 },
 {
-    tableName: "tbVagaONG",
+    tableName: "tbvagaong",
     timestamps:false
 })

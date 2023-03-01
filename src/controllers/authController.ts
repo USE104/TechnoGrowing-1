@@ -9,8 +9,6 @@ export const login = (req:Request, res:Response) =>{
 
 export const contaUsuario = (req:Request, res:Response) =>{
 
-    //console.log(error)
-
     res.render('pages/contaUsuario')
 }
 
@@ -74,19 +72,11 @@ export const contaUsuarioPost = async (req:Request, res:Response) =>{
             Url
         })
 
-        // nome,dataNascimento,email,password,cpf,telefone,experiencia,url,confirmpassword
-        //const createdUser = await User.create(user);
-        //inicializar a sessão
-        //req.session.userId = createdUser.id;
-
         req.session.userId = JSON.stringify(user.codVoluntario)
 
 
         req.flash('message','cadastro realizado com sucesso')
 
-        //salvar a sessão
-        //para garantir que meu usuário seja salvo
-        //antes de redirecioná-lo para /
         req.session.save(() =>{
             res.redirect('/cadFinalizado')
         })

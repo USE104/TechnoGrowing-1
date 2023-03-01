@@ -4,7 +4,8 @@ import { Loja } from '../models/Loja';
 import { Ong } from '../models/Ong';
 import { Voluntario } from '../models/Voluntario';
 import { Contatos } from '../models/Contatos';
-import {sequelize } from '../instances/mysql'
+import { sequelize } from '../instances/mysql'
+import { VagasONG } from '../models/vagaOng';
 
 export const home = async (req:Request, res:Response) => {
     try{
@@ -23,8 +24,11 @@ export const perfil = (req:Request, res:Response) =>{
 export const sobre = (req:Request, res:Response) =>{
     res.render('pages/sobre')
 }
-export const vagas = (req:Request, res:Response) =>{
-    res.render('pages/vagas')
+export const vaga = async (req:Request, res:Response) =>{
+    let tbvagaong = await VagasONG.findAll()
+    res.render('pages/vagas',{
+        tbvagaong
+    })
 }
 export const loja = (req:Request, res:Response) =>{
     res.render('pages/loja')
@@ -49,7 +53,4 @@ export const obrigado =(req:Request, res:Response)=>{
 }
 export const vagaCriada = (req:Request, res:Response) =>{
     res.render('pages/vagaCriada')
-}
-export const criarVaga = (req:Request, res:Response) =>{
-    res.render('pages/criarVaga')
 }

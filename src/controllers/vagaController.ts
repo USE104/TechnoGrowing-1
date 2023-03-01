@@ -1,30 +1,27 @@
 import { Request, Response } from "express"
 import { VagasONG } from "../models/vagaOng"
 
-export const login = (req:Request, res:Response) =>{
-    res.render('pages/login')
+export const criarVaga = (req:Request, res:Response) =>{
+    res.render('pages/vagaCriada')
 }
 
-export const Vaga = (req:Request, res:Response) =>{
+export const Vagas = (req:Request, res:Response) =>{
     res.render('pages/criarVaga')
 }
 
-export const cadVagaPost = async (req:Request, res:Response) =>{
-    //verificando as validações do usuário
+export const criarVagaPost = async (req:Request, res:Response) =>{
 
     //recebendo as informações do usuário via body (POST)
-    const {NomeONG,Vaga,Categoria,Descricao,Periodo,Horario,Endereco} = req.body
+    const {Vaga,Categoria,Descricao,Periodo,Horario} = req.body
 
     try{
         /* criando o usuário no banco */
         const user = await VagasONG.create({
-            NomeONG,
             Vaga,
             Categoria,
             Descricao,
             Periodo,
-            Horario,
-            Endereco
+            Horario
         })
 
         req.session.userId = JSON.stringify(user.codVaga)
@@ -40,3 +37,7 @@ export const cadVagaPost = async (req:Request, res:Response) =>{
         console.log(err)
     }
 }
+
+// export function criarVaga(arg0: string, criarVagas: (req: Request, res: Response) => void) {
+//     throw new Error('Function not implemented.')
+// }
